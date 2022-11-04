@@ -1,10 +1,9 @@
----
 items:
-  - text: Menu One
-    url: "#"
-  - text: Menu Two
-    url: "#"
-  - text: Menu Three
-    url: "#"
-  - text: Blog
-    url: "/blog"
+  - text: מי אנחנו
+    url: /about
+  - text: לוח הופעות
+    url: /schedule
+  - text: בלוג
+    url: /blog
+  - text: צור קשר
+    url: /contact
