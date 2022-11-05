@@ -1,0 +1,64 @@
+---
+title: דף הבית
+layout: "base.njk"
+---
+
+    <div
+      class="hero w-screen fixed h-full grid items-center bg-black -mt-[100vh]"
+    >
+      <img
+        class="relative top-10 m-auto w-[600px] min-w-[400px]"
+        src="/assets/img/group.png"
+        alt=""
+      />
+      <img
+        class="absolute mt-60 mx-auto w-screen scale-y-125"
+        src="/assets/img/paper.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
+<section class=" w-full mt-[50vh] z-50 min-h-screen pb-[50vh] relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 flex-col bg-[#f9dec9ff]">
+ 
+  <div class="bar relative h-[200vh] w-full bg-[#685044ff]"></div>
+  <div class="bar relative h-[200vh] w-full bg-[#e8afa3ff]"></div>
+  <div class="bar relative h-[200vh] w-full bg-[#f9dec9ff]"></div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+  
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.set('.bar', {y:'50vh'})
+  const tl=gsap.timeline({
+    scrollTrigger:{
+      trigger: 'section',
+      start: 'top 90%',
+      end: '90% top',
+      pin: true,
+      // scrub:2,
+      markers:true,
+      pinSpacing: false,
+				toggleActions: 'play complete none reverse'
+
+    }
+  })
+
+  tl.to('.bar', {
+    stagger:.2,
+    duration:1,
+    y:'-100vh'
+  })
+  
+</script>
+
+<style>
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+</style>

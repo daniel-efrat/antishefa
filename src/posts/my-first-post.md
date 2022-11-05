@@ -13,6 +13,18 @@ tags:
 ---
 # This is a Heading h1
 
+
+
+--patriarch: #782084ff;
+
+--champagne-pink: #f9dec9ff;
+
+--wild-blue-yonder: #99b2ddff;
+
+--melon: #e9afa3ff;
+
+--umber: #685044ff;
+
 ## This is a Heading h2
 
 ###### This is a Heading h6
