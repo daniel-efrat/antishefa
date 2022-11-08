@@ -2,63 +2,68 @@
 title: דף הבית
 layout: "base.njk"
 ---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="//unpkg.com/alpinejs" defer></script>
 
-    <div
-      class="hero w-screen fixed h-full grid items-center bg-black -mt-[100vh]"
-    >
-      <img
-        class="relative top-10 m-auto w-[600px] min-w-[400px]"
-        src="/assets/img/group.png"
-        alt=""
-      />
-      <img
-        class="absolute mt-60 mx-auto w-screen scale-y-125"
-        src="/assets/img/paper.png"
-        alt=""
-      />
-    </div>
+
+
+<div class="hero relative m-auto inset-0 flex flex-col justify-center items-center h-screen">
+  {% include 'hero.njk' %}
   </div>
+  <div class="">
+  {% include 'about.njk' %}
 </div>
-<section class=" w-full mt-[50vh] z-50 min-h-screen pb-[50vh] relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 flex-col bg-[#f9dec9ff]">
- 
-  <div class="bar relative h-[200vh] w-full bg-[#685044ff]"></div>
-  <div class="bar relative h-[200vh] w-full bg-[#e8afa3ff]"></div>
-  <div class="bar relative h-[200vh] w-full bg-[#f9dec9ff]"></div>
-</section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-  
   gsap.registerPlugin(ScrollTrigger)
-  gsap.set('.bar', {y:'50vh'})
-  const tl=gsap.timeline({
-    scrollTrigger:{
-      trigger: 'section',
-      start: 'top 90%',
-      end: '90% top',
-      pin: true,
-      // scrub:2,
-      markers:true,
-      pinSpacing: false,
-				toggleActions: 'play complete none reverse'
+  gsap.registerPlugin(ScrollToPlugin)
 
-    }
-  })
+  // gsap.set("section", { y: '100vh' })
+  // gsap.set(".bar", { y: 40 })
 
-  tl.to('.bar', {
-    stagger:.2,
-    duration:1,
-    y:'-100vh'
-  })
   
+
+  // gsap.to(".cloak", { opacity: 0, duration: 2, delay: 1 })
+
+  const bars = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".trigger",
+      start: "top 95%",
+      end: "90% top",
+      pin: true,
+      scrub:2,
+      // markers: true,
+      pinSpacing: false,
+      // toggleActions: "play complete none reverse",
+    },
+  })
+
+  bars
+  .to(window, {
+    duration:1,
+  })
+    // .to(".bar", {
+    //   stagger: 0.1,
+    //   duration: 0.3,
+    //   ease: "power1.easeOut",
+    //   y: "-100vh",
+    //   skewY: 0,
+    // })
+    // .to("section", { y: 0 })
 </script>
 
 <style>
   body {
     width: 100%;
     overflow-x: hidden;
+    background-color: #ce9284;
+    font-family: 'Noto Serif Hebrew', serif;
   }
 </style>

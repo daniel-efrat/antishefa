@@ -1,0 +1,78 @@
+ <div class="toggle">
+        <form>
+          <input type="checkbox" id="toggleOn" />
+          <label for="toggleOn">
+            <div class="slider">
+              <span class="button"></span>
+              <span class="moon">
+                <i data-feather="moon" class="moon-icon"></i>
+              </span>
+              <span class="sun">
+                <i data-feather="sun" class="sun-icon"></i>
+              </span>
+            </div>
+          </label>
+        </form>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+      <script>
+        let toggle = document.querySelector("#toggleOn")
+  let slider = document.querySelector(".slider")
+  let button = document.querySelector(".button")
+  let sun = document.querySelector(".sun>i")
+  let moon = document.querySelector(".moon>i")
+
+  feather.replace()
+
+  toggle.onclick = () => {
+    if (toggle.checked) {
+      toggleDarkModeOn()
+    } else {
+      toggleDarkModeOff()
+    }
+  }
+
+  let toggleDarkModeOn = () => {
+    gsap.to(button, { ease: "sine.out", x: -25 })
+    gsap.to(".groupLight", { ease: "sine.out", opacity: 0 })
+    gsap.to("header", { background: "#222", color: "#fafafa" })
+    // gsap.to("path", { fill: "#fafafa", duration: 1 })
+    // gsap.to(".bar1", { background: "#585858" })
+    // gsap.to(".bar2", { background: "#222222" })
+    // gsap.to(".bar3", { background: "#545653" })
+    gsap.to("body", { background: "#585858" })
+    gsap.to(".card", { background: "rgb(76, 37, 84, 0.3)" })
+
+    // #222
+
+    // #585858
+    // #222222
+    // #545653
+
+    sun.style.background = "transparent"
+    moon.style.background = "#fafafa"
+    slider.style.background = "#33f"
+    button.style.background = "#000"
+  }
+
+  let toggleDarkModeOff = () => {
+    gsap.to(button, { ease: "sine.out", x: 0 })
+    gsap.to(".groupLight", { ease: "sine.out", opacity: 1 })
+    gsap.to("header", { background: "#575757", color: "#545454" })
+    gsap.to("path", { fill: "#fafafa" })
+    // gsap.to(".bar1", { background: "#898989" })
+    // gsap.to(".bar3", { background: "#fafafa" })
+    // gsap.to(".bar2", { background: "#575757" })
+    gsap.to("body", { background: "#fafafa" })
+    gsap.to(".card", { background: "rgb(87, 92, 85, 0.3)" })
+
+    sun.style.background = "#fafafa"
+    moon.style.background = "transparent"
+    slider.style.background = "#c5c5c5"
+    button.style.background = "white"
+  }
+      </script>

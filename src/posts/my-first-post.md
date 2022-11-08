@@ -11,19 +11,30 @@ tags:
   - center
   - right
 ---
+
 # This is a Heading h1
 
+--patriarch: #959595;
 
+--champagne-pink: #fafafa;
 
---patriarch: #782084ff;
-
---champagne-pink: #f9dec9ff;
-
---wild-blue-yonder: #99b2ddff;
+--wild-blue-yonder: #c5c5c5;
 
 --melon: #e9afa3ff;
 
 --umber: #685044ff;
+
+--midnight: #545454ff;
+--ebony: #575c55ff;
+--ash-gray: #cad2c5ff;
+--red-orange-color-wheel: #f44708ff;
+--auburn: #9e2a2bff;
+
+#222
+
+#585858
+#959595
+#545653
 
 ## This is a Heading h2
 
@@ -31,23 +42,23 @@ tags:
 
 ## Emphasis
 
-*This text will be italic*\
-*This will also be italic*
+_This text will be italic_\
+_This will also be italic_
 
 **This text will be bold**\
 **This will also be bold**
 
-*You **can** combine them*
+_You **can** combine them_
 
 ## Lists
 
 ### Unordered
 
-* Item 1
-* Item 2
+- Item 1
+- Item 2
 
-  * Item 2a
-  * Item 2b
+  - Item 2a
+  - Item 2b
 
 ### Ordered
 

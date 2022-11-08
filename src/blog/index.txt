@@ -1,0 +1,47 @@
+---
+layout: blog
+title: בלוג
+---
+
+<script src="//unpkg.com/alpinejs" defer></script>
+<section class="mt-15 px-10">
+  {% for post in postslist | reverse %}
+  <article class="my-8 w-4/5">
+    <img src="{{  post.data.image }}" alt="" class="relative" />
+    <h2 class="font-bold text-3xl text-gray-900 mb-2">
+      <a href="{{ post.url | url }}">
+        {% if post.data.title %} {{ post.data.title }} {% else %} Untitled {%
+        endif %}
+      </a>
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-3">
+      <time>
+        {{ post.date | readableDate }} by
+        <a>{{ post.data.author }}</a>
+      </time>
+    </p>
+    {% if post.data.description %}
+    <p class="text-lg text-gray-500 mb-3">{{ post.data.description }}</p>
+    {% endif %}
+
+    <p>
+      <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+        Read more →
+      </a>
+    </p>
+  </article>
+  {% endfor %}
+</section>
+<div
+  x-data="{ open:false }" x-on:click="open = ! open"
+  class="btn w-max flex rounded-full shadow-sm hover:shadow-lg hover:bg-orange-300 items-center cursor-pointer text-center text-white px-6 h-8 bg-orange-700"
+>
+  <p>Click me!</p>
+</div>
+<div x-show="open" class="box w-40 h-40 relative bg-violet-800 m-auto"></div>
+<style>
+  img {
+    width: 300px;
+    transform: scale(0.5);
+  }
+</style>

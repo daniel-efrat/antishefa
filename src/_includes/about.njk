@@ -1,0 +1,70 @@
+<div class="about relative w-screen h-screen grid items-center justify-center">
+
+<div class="trigger absolute w-32  h-screen left-0"></div>
+
+<div class="w-full md:w-4/5 lg:w-3/5 absolute grid pr-44 gap-5 mx-auto  mt-44 inset-0">
+
+    <img class="maZe origin-left scale-x-150 w-[420px] h-[99.4px] col-start-3 row-start-1 col-span-4 self-start " src="/assets/img/maze.png" alt="">
+
+    <img class="antiShefa w-[87.08px] h-[659px] col-start-2 row-start-1 place-self-end self-start" src="/assets/img/antishefa.png" alt="">
+    
+    <div  class="card absolute mx-auto top-5 bottom-0 text-white row-start-1 mt-[108.5px] row-span-4 col-start-3 col-span-4 w-[630px] h-[530px] p-8" dir="rtl">
+        <h1 class="text-4xl font-bold mb-6 pb-3 w-max border-b-2 relative m-auto">שרלטנות השפע</h1>
+        <p>
+"אנטי שפע" היא פעולה קדם תיאטרלית המסרבת להיכנע לתכתיבי ותהליכי השפע המדומה הנמצא בתרבות, ונטפל אל תחומי חיינו הנמדדים בסולם הרייטינג. מטרת ה"אנטי שפע" היא להביט מבט מעמיק בשפע ולהציגו במערומיו, היפים והכעורים.
+</p>
+<br>
+<p>
+"אנטי שפע" הוא מפרק זמני של השפע ומתייחס לכל שפע באשר הוא. בין אם הוא מזויף ושרלטני ובין אם הוא פרץ של יצירתיות המעוררת מחשבה. "אנטי שפע" הוא רגלו השמאלית של השפע ומתוך כך מופעי ה"אנטי שפע" המתקיימים בתיאטרון "תמונע" עוסקים בתחומי אמנות מגוונים- משירה, מוזיקה, וידאו ארט, פרפורמנס, תוצאות מחקר על תורת לחיצת הידיים בין מנהיגי עולם ועוד- כשהם במצבם הקדם תיאטרלי אשר מונע מהרייטינג לחדור ולהשפיע על התוצאה כפי שהיא מוצגת על הבמה.  
+</p>
+    </div>
+</div>
+</div>
+<script>
+  gsap.registerPlugin(ScrollTrigger)
+gsap.set(".maZe", { opacity:0, x: "-100vw" })
+
+  gsap.set(".antiShefa", {x:'100vw', opacity:0 })
+
+  gsap.set(".card", { y: "100vh" })
+  const about = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".trigger",
+      start: "top 70%",
+      end: 'top 10%',
+      pin: true,
+      scrub:6
+      // markers: true,
+      // toggleActions: "play complete none reverse",
+    },
+  })
+
+  about
+  .to('.antiShefa', {x:0,opacity:1, duration:1})
+  .to('.card', {y:0, opacity:1, duration:1.1},0)
+  .to(".maZe", { x: 0, opacity:1, duration: 1.2 },0)
+//   .to('.about', {y:'-50vh', duration:1}, 0)
+</script>
+
+</script>
+<style>
+   h1{
+    font-family: 'Noto Serif Hebrew', serif;
+   }
+   
+   p {
+        line-height: 2rem;
+        font-size: 18px;
+        font-family: 'Noto Serif Hebrew', serif;
+    }
+    .card {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5), -1px -1px 20px rgba(254, 254, 254, 0.5);
+        background-color: rgba(31, 31, 31, 0.625);
+        border-radius: 3px;
+    }
+    .about {
+      background-image: url('/assets/img/hero1.png');
+      object-fit: fill;
+      object-position: center;
+    }
+</style>

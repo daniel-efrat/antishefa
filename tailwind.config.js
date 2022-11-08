@@ -6,14 +6,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        "primary":"#782084ff",
-        "champagne":"#f9dec9ff",
-        "wild-blue":"#99b2ddff",
-        "melon":"#e8afa3ff",
-        "umber":"#685044ff"
+        primary: "#959595",
+        champagne: "#fafafa",
+        "wild-blue": "#c5c5c5",
+        melon: "#898989ff",
+        umber: "#685044ff",
       },
     },
   },
   variants: {},
   plugins: [require("@tailwindcss/typography")],
-};
+}
