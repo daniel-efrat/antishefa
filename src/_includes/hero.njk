@@ -1,12 +1,32 @@
 
-  <div class="hero w-screen relative h-screen overflow-hidden grid items-center bg-black ">
+  <div class="hero w-screen relative h-screen overflow-hidden grid items-center ">
     <img
-    class="absolute w-full h-full object-cover"
+    class="heroImg absolute w-full h-full object-cover"
     src="/assets/img/hero1.png"
     alt=""
     />
-    <img
-   class="groupLight relative w-full h-full object-cover" src="/assets/img/hero1.png"
-   alt="" />
+   <img src="/assets/img/logoWhite.png" alt="" class="heroLogo fixed mt-80 md:mt-[10vh] mx-auto inset-0 w-[300px] md:w-[500px] bg-gray-50 bg-opacity-10 backdrop-blur-md">
+   
+   <!-- <div class="heroLogo absolute m-auto inset-0 w-[300px] h-60 bg-black">
+   </div> -->
    
   </div>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger)
+    const heroLogo = gsap.timeline({
+      scrollTrigger: {
+        trigger:'.heroImg',
+        start: 'bottom 80%',
+        end:'bottom 20%',
+        scrub: 2,
+        markers: true
+      }
+    })
+
+    heroLogo.to('.heroLogo', {
+      opacity:0
+    })
+    
+  </script>
+ 

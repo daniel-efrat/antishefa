@@ -1,0 +1,89 @@
+<div class="postList">
+ {% include 'archiveFX.njk' %}
+  <div dir="rtl" class="w-full h-screen">
+    <ul class="flex w-max h-[100vh] container pt-[40vh]">
+      
+              {%- for post in posts %}
+         <section class="-mt-20">
+           <li class="panel w-80 h-max text-white">
+             <a href="/posts/{{ item.title.rendered | slug }}">
+               {{ post.title.rendered }}
+             </a>
+             <img
+               class="mt-2 w-[300px]"
+               src="{{ post._embedded['wp:featuredmedia']['0'].source_url }}"
+               alt=""
+             />
+           </li>
+         </section>
+          {% endfor -%}
+      
+      
+  </div>
+  
+  <div class="final">
+    
+  </div>
+</div>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger)
+
+  let sections = gsap.utils.toArray(".panel")
+
+  let scrollTween = gsap.to(sections, {
+    xPercent: 100 * (sections.length - 1),
+    ease: "none", // <-- IMPORTANT!
+    scrollTrigger: {
+      trigger: ".container",
+      pin: true,
+      pinSpacing: false,
+      scrub: 2,
+      //snap: directionalSnap(1 / (sections.length - 1)),
+      end: "+=3000",
+    },
+  })
+</script>
+
+<style>
+  body {
+    background-color: #222;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  .postList {
+    background: linear-gradient(135deg, #02314a 0%,#0f0448 26%,#1d064b 40%,#001d6b 60%,#2f0202 100%);
+    object-fit: contain;
+    background-repeat: no-repeat;
+    height: 400vh;
+  }
+
+  .description,
+  .final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    min-height: 80vh;
+  }
+
+  .container {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    pointer-events: none;
+  }
+
+  .panel {
+    font-weight: 300;
+  }
+
+.pin-spacer {
+  pointer-events: none;
+}
+  
+</style>

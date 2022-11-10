@@ -7,6 +7,7 @@
     <title>{{ posts.title.rendered }}</title>
   </head>
   <body>
+    {% include 'partials/_header' %}
     {{ content | safe }}
   </body>
 </html>

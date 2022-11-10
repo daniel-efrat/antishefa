@@ -2,20 +2,25 @@
 title: דף הבית
 layout: "base.njk"
 ---
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
 <script src="//unpkg.com/alpinejs" defer></script>
 
-
-
-<div class="hero relative m-auto inset-0 flex flex-col justify-center items-center h-screen">
+<div
+  class="hero relative m-auto inset-0 flex flex-col justify-center items-center h-screen"
+>
   {% include 'hero.njk' %}
-  </div>
-  <div class="">
-  {% include 'about.njk' %}
 </div>
-
+<div class="">{% include 'about.njk' %}</div>
+<div class="divider absolute z-[2] w-[120vw] h-max -ml-10 -mt-[300px] block">
+  <img src="assets/img/slice1.png" alt="">
+</div>
+<div>{% include 'postList.njk' %}</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
@@ -24,46 +29,24 @@ layout: "base.njk"
 <script>
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(ScrollToPlugin)
-
-  // gsap.set("section", { y: '100vh' })
-  // gsap.set(".bar", { y: 40 })
-
-  
-
-  // gsap.to(".cloak", { opacity: 0, duration: 2, delay: 1 })
-
-  const bars = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".trigger",
-      start: "top 95%",
-      end: "90% top",
-      pin: true,
-      scrub:2,
-      // markers: true,
-      pinSpacing: false,
-      // toggleActions: "play complete none reverse",
-    },
-  })
-
-  bars
-  .to(window, {
-    duration:1,
-  })
-    // .to(".bar", {
-    //   stagger: 0.1,
-    //   duration: 0.3,
-    //   ease: "power1.easeOut",
-    //   y: "-100vh",
-    //   skewY: 0,
-    // })
-    // .to("section", { y: 0 })
 </script>
 
 <style>
   body {
     width: 100%;
     overflow-x: hidden;
-    background-color: #ce9284;
-    font-family: 'Noto Serif Hebrew', serif;
+    background-color: black;
+    font-family: "Noto Serif Hebrew", serif;
+  }
+  .divider {
+    /* clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 60%); */
+    margin-top: -40px;
+    mix-blend-mode: overlay;
+    /* background: rgb(181, 181, 214);
+    background: linear-gradient(
+      356deg,
+      rgb(1, 1, 143) 0%,
+      rgb(2, 62, 93) 100%
+    ); */
   }
 </style>
